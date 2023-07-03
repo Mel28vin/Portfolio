@@ -1,51 +1,75 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro"
+import HorizontalCard from "../components/HorizontalCard.astro"
 ---
 
 <BaseLayout title="Projects" sideBarActiveItemID="projects">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5">Machine Learning Projects</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="Parkinson's disease prediction"
+    img="/ml.jpeg"
+    desc="Improved the Detection Accuracy by a significant margin by analyzing various hyperparameters and kernels for Machine Learning Classification Algorithms."
+    url="https://github.com/Mel28vin/parkinsons-prediction"
+    tags={["scikit-learn", "Python"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="House Price Prediction"
+    img="/ml.jpeg"
+    desc="Improved the Prediction Accuracy by Hyperparameter optimization and applying transformation algorithms to dataset after EDA."
+    url="https://github.com/Mel28vin/house-price-prediction"
+    badge="NEW"
+    tags={["scikit-learn", "Python"]}
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">
+      Web Development Projects
+    </div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="CovidVision"
+    img="/covid.jpeg"
+    desc="A NextJS Web App capable of performing real-time client side Deep Learning inference using Tensorflow.js to predict COVID-19 through X-ray images."
+    url="https://github.com/Mel28vin/covidvision"
+    badge="NEW"
+    tags={["Tensorflow", "React"]}
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Generate Intro App"
+    img="/vercel.webp"
+    desc="Implemented a personalized Intro generator using the GPT model from OpenAI and Vercel's Edge Functions in a NextJS application based on a FOSS Project. "
+    url="https://github.com/Mel28vin/generate-intro"
     badge="FOSS"
+    tags={["GPT", "React"]}
+  />
+
+  <HorizontalCard
+    title="Portfolio App"
+    img="/astro.jpeg"
+    desc="A simple portfolio website made using Astro and Tailwind to showcase my work."
+    url="https://github.com/Mel28vin/Portfolio"
+    tags={["Astro", "Tailwind"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 4"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Internfeed Clone"
+    img="nextjs.png"
+    desc="A frontend Clone of the Interfeed website using NextJS and Tailwind."
+    url="https://github.com/Mel28vin/internfeed-clone"
+    tags={["NextJS", "Tailwind"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 5"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="REST API using Node.js"
+    img="/node.jpg"
+    desc="Implemented CRUD operations on a database for staff management using Node.js and Express."
+    url="https://github.com/Mel28vin/api-testing"
+    tags={["Node.js", "Express"]}
   />
 </BaseLayout>
