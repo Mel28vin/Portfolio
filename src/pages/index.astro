@@ -1,13 +1,7 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const last_posts = posts.slice(0, 3);
+import BaseLayout from "../layouts/BaseLayout.astro"
+import HorizontalCard from "../components/HorizontalCard.astro"
+import TimeLineElement from "../components/cv/TimeLine.astro"
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -19,7 +13,8 @@ const last_posts = posts.slice(0, 3);
       <text class="text-lg">
         Welcome to my portfolio page! I'm an aspiring software developer
         dedicated to delivering innovative and performant user experiences.
-        Passionate about exploring new technology and exceeding expectations!
+        Passionate about exploring new technology and exceeding expectations
+        while living in the <b>terminal</b>.
       </text>
     </div>
     <div class="mt-8">
@@ -39,31 +34,52 @@ const last_posts = posts.slice(0, 3);
       </a>
     </div>
   </div>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="B.E., Electronics and Communication Engineering"
+      subtitle="2020 to 2024 at Velammal College of Engineering and Technology, Madurai, India"
+    />
+    <TimeLineElement
+      title="Higher Secondary Education"
+      subtitle="2019 to 2020 at The TVS School, Madurai, India"
+    />
+    <TimeLineElement
+      title="Secondary School Education"
+      subtitle="2017 to 2018 at Velammal Memorial Matriculation Higher Secondary School, Madurai, India"
+    />
+  </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">My latest projects {"</>"}</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="CovidVision"
+    img="/covid.jpeg"
+    desc="A NextJS Web App capable of performing real-time client side Deep Learning inference using Tensorflow.js to predict COVID-19 through X-ray images."
+    url="https://github.com/Mel28vin/covidvision"
     badge="NEW"
+    tags={["Tensorflow", "React"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Parkinson's disease prediction"
+    img="/parkinsons.jpeg"
+    desc="Improved the Detection Accuracy by a significant margin by analyzing various hyperparameters and kernels for Machine Learning Classification Algorithms."
+    url="https://github.com/Mel28vin/parkinsons-prediction"
+    tags={["scikit-learn", "Python"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Generate Intro App"
+    img="/vercel.webp"
+    desc="Implemented a personalized Intro generator using the GPT model from OpenAI and Vercel's Edge Functions in a NextJS application based on a FOSS Project. "
+    url="https://github.com/Mel28vin/generate-intro"
     badge="FOSS"
+    tags={["GPT", "React"]}
   />
 </BaseLayout>
